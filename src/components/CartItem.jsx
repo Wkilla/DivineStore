@@ -35,7 +35,7 @@ const CartItem = ({ cartItem }) => {
         {/* AMOUNT */}
         <div className="form-control max-w-xs">
           <label htmlFor="amount" className="label p-0">
-            <span className="label-text text-accent-content">Amount</span>
+            <span className="label-text text-accent-content">Сумма</span>
           </label>
           <input
             name="number"
@@ -50,12 +50,12 @@ const CartItem = ({ cartItem }) => {
           className="mt-2 link link-warning link-hover text-sm text-accent-content"
           onClick={()=> dispatch(removeItem(id))}
         >
-          remove
+          Удалить
         </button>
       </div>
 
       {/* PRICE */}
-      <p className="font-medium sm:ml-auto text-accent-content">${ (price * amount).toFixed(2) }</p>
+      <p className="font-medium sm:ml-auto text-accent-content">₸{ (price * amount).toFixed(2) }</p>
     </article>
   );
 };

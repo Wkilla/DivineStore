@@ -22,7 +22,7 @@ const FormRange = ({ label, name, size, price }) => {
         step={step}
       />
       <div className='w-full flex justify-between text-xs px-2 mt-2'>
-        <span className='font-bold text-md'>₸0</span>
+        <span className='font-bold text-md'>0₸</span>
         <span className='font-bold text-md'>Макс: ₸{maxPrice}</span>
       </div>
     </div>

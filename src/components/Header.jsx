@@ -141,7 +141,7 @@ const Header = () => {
                   {amount} Вещей
                 </span>
                 <span className="text-info text-accent-content">
-                  Промежуточный итог: ${total.toFixed(2)}
+                  Промежуточный итог: {total.toFixed(2)}₸
                 </span>
                 <div className="card-actions">
                   <Link

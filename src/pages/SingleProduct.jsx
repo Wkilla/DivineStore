@@ -143,7 +143,7 @@ const SingleProduct = () => {
           </h2>
           <SingleProductRating rating={rating} productData={productData} />
           <p className="text-3xl text-error">
-            ${productData?.price?.current?.value}
+            ₸{productData?.price?.current?.value}
           </p>
           <div className="text-xl max-sm:text-lg text-accent-content">
             {parse(productData?.description)}

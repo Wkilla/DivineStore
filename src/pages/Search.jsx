@@ -37,7 +37,7 @@ const Search = () => {
 
   return (
     <>
-      <SectionTitle title="Search" path="Home | Search" />
+      <SectionTitle title="Поиск" path="Главная страница | Поиск" />
 
       <form
         className="form-control max-w-7xl mx-auto py-10 px-10"
@@ -46,7 +46,7 @@ const Search = () => {
         <div className="input-group">
           <input
             type="text"
-            placeholder="Search here…"
+            placeholder="Ищите здесь…"
             className="input input-bordered input-lg w-full outline-0 focus:outline-0"
             name="search"
           />

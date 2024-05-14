@@ -21,28 +21,28 @@ const Register = () => {
 
     if (name.length === 0) {
       isProceed = false;
-      errorMessage = "Please enter the value in username field";
+      errorMessage = "Пожалуйста, введите значение в поле имя пользователя";
     } else if (lastname.length === 0) {
       isProceed = false;
-      errorMessage = "Please enter the value in lastname field";
+      errorMessage = "Пожалуйста, введите значение в поле фамилия";
     } else if (email.length === 0) {
       isProceed = false;
-      errorMessage = "Please enter the value in email field";
+      errorMessage = "Пожалуйста, введите значение в поле адрес электронной почты";
     } else if (phone.length < 4) {
       isProceed = false;
-      errorMessage = "Phone must be longer than 3 characters";
+      errorMessage = "Длина номера должна превышать 3 символа";
     } else if (adress.length < 4) {
       isProceed = false;
-      errorMessage = "Adress must be longer than 3 characters";
+      errorMessage = "Длина адреса должна превышать 3 символа";
     } else if (password.length < 6) {
       isProceed = false;
-      errorMessage = "Please enter a password longer than 5 characters";
+      errorMessage = "Пожалуйста, введите пароль длиной более 5 символов";
     } else if (confirmPassword.length < 6) {
       isProceed = false;
-      errorMessage = "Please enter a confirm password longer than 5 characters";
+      errorMessage = "Пожалуйста, введите подтверждающий пароль длиной более 5 символов";
     } else if (password !== confirmPassword) {
       isProceed = false;
-      errorMessage = "Passwords must match";
+      errorMessage = "Пароли должны совпадать";
     }
 
     if (!isProceed) {
@@ -73,17 +73,17 @@ const Register = () => {
         body: JSON.stringify(regObj),
       })
         .then((res) => {
-          toast.success("Registration Successful");
+          toast.success("Регистрация прошла успешно");
           navigate("/login");
         })
         .catch((err) => {
-          toast.error("Failed: " + err.message);
+          toast.error("Ошибка: " + err.message);
         });
     }
   };
   return (
     <>
-      <SectionTitle title="Register" path="Home | Register" />
+      <SectionTitle title="Регистрация" path="Главная страница | Регистрация" />
       <div className="flex flex-col justify-center sm:py-12">
         <div className="p-10 xs:p-0 mx-auto md:w-full md:max-w-md">
           <div className="bg-dark border border-gray-600 shadow w-full rounded-lg divide-y divide-gray-200">

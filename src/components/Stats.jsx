@@ -15,15 +15,15 @@ const Stats = () => {
             </div>
             <div className="flex flex-col items-center">
               <h3 className="text-5xl font-extrabold leading-tight text-center text-accent-content">
-                $<span>12</span>m
+                <span>120</span> млн ₸
               </h3>
               <p className="text-base font-medium leading-7 text-center text-accent-content">
-                Ежегодный рост выручки
+                Ежегодная выручка
               </p>
             </div>
             <div className="flex flex-col items-center">
               <h3 className="text-5xl font-extrabold leading-tight text-center text-accent-content">
-                <span id="countto3" data-decimal="1">2600</span>k+
+                <span id="countto3" data-decimal="1">2600</span>+
               </h3>
               <p className="text-base font-medium leading-7 text-center text-accent-content">
                 Глобальные партнеры

@@ -8,6 +8,11 @@ import { useNavigate } from "react-router-dom";
 const Profile = () => {
   const [id, setId] = useState(localStorage.getItem("id"));
   const [userData, setUserData] = useState({});
+  if (!id) {
+    // Обработка сценария, когда ID отсутствует
+    console.error("User ID is missing");
+    return;
+  }
   const loginState = useSelector((state) => state.auth.isLoggedIn);
   const wishItems = useSelector((state) => state.wishlist.wishItems);
   const [userFormData, setUserFormData] = useState({

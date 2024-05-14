@@ -24,7 +24,7 @@ const ProductElement = ({ id, title, image, rating, price, brandName }) => {
             </h3>
           </Link>
           <div className="flex items-center justify-between">
-            <span className="text-3xl font-bold text-accent-content">${price}</span>
+            <span className="text-3xl font-bold text-accent-content">{price}₸</span>
           </div>
         </div>
       </div>

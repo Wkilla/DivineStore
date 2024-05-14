@@ -42,7 +42,7 @@ const Profile = () => {
     if (loginState) {
       getUserData();
     } else {
-      toast.error("You must be logged in to access this page");
+      toast.error("Вы должны войти в систему, чтобы получить доступ к этой странице");
       navigate("/");
     }
   }, []);
@@ -74,7 +74,7 @@ const Profile = () => {
 
   return (
     <>
-      <SectionTitle title="User Profile" path="Home | User Profile" />
+      <SectionTitle title="Профиль пользователя" path="Главная страница | Профиль пользователя" />
       <form className="max-w-7xl mx-auto text-center px-10" onSubmit={updateProfile}>
         <div className="grid grid-cols-3 max-lg:grid-cols-1">
           <div className="form-control w-full lg:max-w-xs">
@@ -131,7 +131,7 @@ const Profile = () => {
 
           <div className="form-control w-full lg:max-w-xs">
             <label className="label">
-              <span className="label-text">Ващ адрес</span>
+              <span className="label-text">Ваш адрес</span>
             </label>
             <input
               type="text"

@@ -138,7 +138,7 @@ const Header = () => {
             >
               <div className="card-body">
                 <span className="font-bold text-lg text-accent-content">
-                  {amount} Items
+                  {amount} Вещей
                 </span>
                 <span className="text-info text-accent-content">
                   Промежуточный итог: ${total.toFixed(2)}
@@ -148,7 +148,7 @@ const Header = () => {
                     to="/cart"
                     className="btn bg-blue-600 btn-block text-white hover:bg-blue-500 text-base-content"
                   >
-                    Посмотреть карту
+                    Корзина
                   </Link>
                 </div>
               </div>

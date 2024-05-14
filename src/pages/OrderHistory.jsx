@@ -27,7 +27,7 @@ const OrderHistory = () => {
 
   useEffect(() => {
     if (!loginState) {
-      toast.error("You must be logged in to access this page");
+      toast.error("Вы должны войти в систему, чтобы получить доступ к этой странице");
       navigate("/");
     } else {
       getOrderHistory();

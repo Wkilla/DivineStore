@@ -8,27 +8,27 @@ import FormCheckbox from "./FormCheckbox";
 
 const Filters = () => {
   const [selectCategoryList, setSelectCategoryList] = useState([
-    "all",
-    "shoes",
-    "slippers",
-    "heels",
-    "t-shirts",
-    "jackets",
-    "caps",
-    "shorts",
-    "sweaters",
-    "sneakers",
-    "shirts",
-    "boots",
-    "overshirts",
-    "pants",
-    "jeans",
-    "socks",
-    "belts",
-    "trainers",
+    "все",
+    "обувь",
+    "тапочки",
+    "каблуки",
+    "футболки",
+    "куртки",
+    "кепки",
+    "шорты",
+    "свитера",
+    "кроссовки",
+    "рубашки",
+    "ботинки",
+    "верхние рубашки",
+    "штаны",
+    "джинсы",
+    "носки",
+    "ремни",
+    "спортивной обувь",
   ]);
   const [selectBrandList, setSelectBrandList] = useState([
-    "all",
+    "все",
     "WALK LONDON",
     "Reebok",
     "Nike",
@@ -69,14 +69,14 @@ const Filters = () => {
       {/* SEARCH */}
       <FormInput
         type="search"
-        label="search product"
+        label="поиск"
         name="search"
         size="input-sm"
         defaultValue=""
       />
       {/* CATEGORIES */}
       <FormSelect
-        label="select category"
+        label="выберите категорию"
         name="category"
         list={selectCategoryList}
         size="select-sm"
@@ -84,7 +84,7 @@ const Filters = () => {
       />
       {/* COMPANIES */}
       <FormSelect
-        label="select brand"
+        label="выберите бренд"
         name="brand"
         list={selectBrandList}
         size="select-sm"
@@ -92,33 +92,33 @@ const Filters = () => {
       />
       {/* ORDER */}
       <FormSelect
-        label="sort by"
+        label="Сортировать по"
         name="order"
-        list={["asc", "desc", "price high", "price low"]}
+        list={["по возрастанию", "по убыванию", "высокая цена", "низкая цена"]}
         size="select-sm"
         defaultValue="a-z"
       />
       {/* Producer */}
       <FormSelect
-        label="Select gender"
+        label="Выберите пол"
         name="gender"
-        list={["all", "male", "female"]}
+        list={["все", "Мужская", "Женская"]}
         size="select-sm"
         defaultValue="all"
       />
       {/* PRICE */}
       <FormRange
         name="price"
-        label="select price"
+        label="Выберите цену"
         size="range-sm"
         price={2000}
       />
       {/* Date Picker */}
-      <FormDatePicker label="select minimum production date" name="date" />
+      <FormDatePicker label="Дата производства" name="date" />
 
       {/* In stock */}
       <FormCheckbox
-        label="Only products in stock"
+        label="На складе"
         name="stock"
         defaultValue="false"
       />
@@ -132,7 +132,7 @@ const Filters = () => {
         поиск
       </button>
       <Link to="/shop?page=1" className="btn btn-primary btn-sm">
-        сброс
+        сбросить
       </Link>
     </Form>
   );

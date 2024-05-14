@@ -63,7 +63,7 @@ const SingleProduct = () => {
   };
 
   for (let i = 0; i < productData?.rating; i++) {
-    rating[i] = "full star";
+    rating[i] = "5";
   }
 
   const addToWishlistHandler = async (product) => {
@@ -112,12 +112,12 @@ const SingleProduct = () => {
 
     
     store.dispatch(removeFromWishlist({ userObj }));
-    toast.success("Product removed from the wishlist!");
+    toast.success("Товар удален из списка желаний!");
   };
 
   return (
     <>
-      <SectionTitle title="Product page" path="Home | Shop | Product page" />
+      <SectionTitle title="Страница продукта" path="Главная страница | Магазин | Страница товара" />
       <div className="grid grid-cols-2 max-w-7xl mx-auto mt-5 max-lg:grid-cols-1 max-lg:mx-5">
         <div className="product-images flex flex-col justify-center max-lg:justify-start">
           <img
@@ -173,7 +173,7 @@ const SingleProduct = () => {
                   dispatch(addToCart(product));
                 } else {
                   toast.error(
-                    "You must be logged in to add products to the cart"
+                    "Вы должны войти в систему, чтобы добавить товары в корзину"
                   );
                 }
               }}
@@ -190,7 +190,7 @@ const SingleProduct = () => {
                     removeFromWishlistHandler(product);
                   } else {
                     toast.error(
-                      "You must be logged in to remove products from the wishlist"
+                      "Вы должны войти в систему, чтобы удалить продукты из списка пожеланий"
                     );
                   }
                 }}
@@ -206,7 +206,7 @@ const SingleProduct = () => {
                     addToWishlistHandler(product);
                   } else {
                     toast.error(
-                      "You must be logged in to add products to the wishlist"
+                      "Вы должны войти в систему, чтобы добавить товары в список желаний"
                     );
                   }
                 }}
@@ -233,7 +233,7 @@ const SingleProduct = () => {
               В наличии: {productData?.isInStock ? "Да" : "Нет"}
             </div>
             <div className="badge bg-gray-700 badge-lg font-bold text-white p-5 mt-2">
-              SKU: {productData?.productCode}
+              Артикул: {productData?.productCode}
             </div>
             <div className="badge bg-gray-700 badge-lg font-bold text-white p-5 mt-2">
               Категория: {productData?.category}

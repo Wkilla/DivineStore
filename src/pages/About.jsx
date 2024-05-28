@@ -3,21 +3,20 @@ import { SectionTitle } from "../components";
 import { Link } from "react-router-dom";
 
 const About = () => {
-  // Стили для поля
   const fieldStyle = {
     marginBottom: '20px',
-    background: '#000', // черный фон
-    color: '#fff', // белый текст
+    background: '#000',
+    color: '#fff',
     padding: '10px',
     border: '1px solid #ccc',
     borderRadius: '4px',
-    width: '50%', // уменьшенная длина
+    width: '50%', 
     marginLeft: 'auto',
-    marginRight: 'auto', // центрирование
-    cursor: 'pointer' // курсор в виде указателя
+    marginRight: 'auto', 
+    cursor: 'pointer' 
   };
 
-  // Стили для названия поля
+
   const labelStyle = {
     fontWeight: 'bold',
     marginBottom: '5px',

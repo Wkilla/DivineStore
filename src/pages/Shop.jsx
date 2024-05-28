@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+
 import React, { useEffect, useState } from "react";
 import {
   Filters,
@@ -15,9 +15,7 @@ export const shopLoader = async ({ request }) => {
   const params = Object.fromEntries([
     ...new URL(request.url).searchParams.entries(),
   ]);
-  // /posts?title=json-server&author=typicode
-  // GET /posts?_sort=views&_order=asc
-  // GET /posts/1/comments?_sort=votes&_order=asc
+
 
   let mydate = Date.parse(params.date);
 
@@ -79,7 +77,7 @@ const Shop = () => {
 
   return (
     <>
-      <SectionTitle title="Магазин" path="Главная страница | Магазин" />
+      <SectionTitle title="Магазин"  />
       <div className="max-w-7xl mx-auto mt-5">
         <Filters />
         {productLoaderData.productsData.length === 0 && <h2 className="text-accent-content text-center text-4xl my-10">По этому фильтру не найдено ни одного товара</h2>}

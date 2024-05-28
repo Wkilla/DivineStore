@@ -5,7 +5,7 @@ import { SectionTitle } from "../components";
 const Contact = () => {
   return (
     <>
-      <SectionTitle title="связаться с нами" path="Главная страница | Контакты" />
+      <SectionTitle title="связаться с нами" />
       <div className="isolate px-6 lg:px-8">
         <Form
           action="#"

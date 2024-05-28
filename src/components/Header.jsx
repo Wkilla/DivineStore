@@ -213,11 +213,11 @@ const Header = () => {
               {/* Sidebar content here */}
               <li className="text-xl">
                 <NavLink className="text-accent-content" to="/">
-                  Домой
+                  Главная страница
                 </NavLink>
               </li>
               <li className="text-xl">
-                <NavLink className="text-accent-content" to="/shop">
+                <NavLink className="text-accent-content" to="/shop?search=&category=все&brand=все&order=по+возрастанию&gender=все&price=200000&date=">
                   Магазин
                 </NavLink>
               </li>
@@ -251,16 +251,16 @@ const Header = () => {
 
         <div className="container text-2xl navlinks-container">
           <NavLink className="text-accent-content" to="/">
-            Домой
+            Главная страница
           </NavLink>
-          <NavLink className="text-accent-content" to="/shop">
+          <NavLink className="text-accent-content" to="/shop?search=&category=все&brand=все&order=по+возрастанию&gender=все&price=200000&date=">
             Магазин
           </NavLink>
           <NavLink className="text-accent-content" to="/about-us">
             О нас
           </NavLink>
           <NavLink className="text-accent-content" to="/contact">
-            Контакты
+            Связаться с нами
           </NavLink>
           {!isLoggedIn && (
             <>

@@ -44,7 +44,7 @@ const ThankYou = () => {
 
   return (
     <>
-      <SectionTitle title="Спасибо" path="Главная страница | Корзина | Спасибо" />
+      <SectionTitle title="Спасибо"  />
       <div className="thankyou-content text-center text-accent-content px-10 max-w-7xl mx-auto">
         <h2 className="text-6xl max-sm:text-4xl">
           Благодарим вас за вашу покупку!

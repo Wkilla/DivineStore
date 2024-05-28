@@ -20,12 +20,10 @@ const Filters = () => {
     "кроссовки",
     "рубашки",
     "ботинки",
-    "верхние рубашки",
     "штаны",
     "джинсы",
     "носки",
     "ремни",
-    "спортивной обувь",
   ]);
   const [selectBrandList, setSelectBrandList] = useState([
     "все",
@@ -111,7 +109,7 @@ const Filters = () => {
         name="price"
         label="Выберите цену"
         size="range-sm"
-        price={2000}
+        price={200000}
       />
       {/* Date Picker */}
       <FormDatePicker label="Дата производства" name="date" />
@@ -120,7 +118,7 @@ const Filters = () => {
       <FormCheckbox
         label="На складе"
         name="stock"
-        defaultValue="false"
+        defaultValue="TRUE"
       />
 
       {/* BUTTONS */}
@@ -131,7 +129,7 @@ const Filters = () => {
       >
         поиск
       </button>
-      <Link to="/shop?page=1" className="btn btn-primary btn-sm">
+      <Link to="/shop?search=&category=все&brand=все&order=по+возрастанию&gender=все&price=200000&date=" className="btn btn-primary btn-sm">
         сбросить
       </Link>
     </Form>

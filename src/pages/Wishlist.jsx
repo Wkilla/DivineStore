@@ -8,7 +8,7 @@ const Wishlist = () => {
     const dispatch = useDispatch();
   return (
     <>
-      <SectionTitle title="Список желаний" path="Главная страница | Список желаний" />
+      <SectionTitle title="Список желаний"  />
       <div className="max-w-7xl mx-auto">
         <div className="overflow-x-auto">
           <table className="table">

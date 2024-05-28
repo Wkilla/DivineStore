@@ -36,7 +36,6 @@ const wishlistSlice = createSlice({
   },
 });
 
-// console.log(cartSlice);
 export const {
   clearWishlist,
   removeFromWishlist,

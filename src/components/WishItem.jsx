@@ -27,7 +27,6 @@ const WishItem = ({ item, counter }) => {
         userObj
       );
   
-      // Dispatch the addToWishlist action with the product data
       store.dispatch(removeFromWishlist({ userObj }));
       toast.success("Товар удален из списка желаний!");
   

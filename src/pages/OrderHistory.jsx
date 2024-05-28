@@ -7,14 +7,12 @@ import axios from "axios";
 import { nanoid } from "nanoid";
 
 const OrderHistory = () => {
-  // cancelled, in progress, delivered
   const loginState = useSelector((state) => state.auth.isLoggedIn);
   const navigate = useNavigate();
   const [orders, setOrders] = useState([]);
 
   const getOrderHistory = async () => {
     try {
-      // saljemo get(default) request
       const response = await axios.get("http://localhost:8080/orders");
       const data = response.data;
       setOrders(
@@ -64,7 +62,6 @@ const OrderHistory = () => {
                 <div className="collapse-content">
                   <div className="overflow-x-auto">
                     <table className="table max-sm:table-xs table-pin-rows table-pin-cols">
-                      {/* head */}
                       <thead>
                         <tr className="text-accent-content">
                           <th>Заказ</th>

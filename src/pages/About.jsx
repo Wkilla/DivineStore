@@ -21,13 +21,12 @@ const About = () => {
   const labelStyle = {
     fontWeight: 'bold',
     marginBottom: '5px',
-    color: '#fff' // белый текст для названия поля
+    color: '#fff' 
   };
 
-  // Функция для копирования текста
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text).then(() => {
-      alert(`Скопировано: ${text}`); // Оповещение пользователя
+      alert(`Скопировано: ${text}`); 
     }, (err) => {
       console.error('Ошибка при копировании: ', err);
     });

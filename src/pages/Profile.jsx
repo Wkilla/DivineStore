@@ -9,7 +9,6 @@ const Profile = () => {
   const [id, setId] = useState(localStorage.getItem("id"));
   const [userData, setUserData] = useState({});
   if (!id) {
-    // Обработка сценария, когда ID отсутствует
     console.error("User ID is missing");
     return;
   }
@@ -59,7 +58,6 @@ const Profile = () => {
       const getResponse = await axios(`http://localhost:8080/user/${id}`);
       const userObj = getResponse.data;
 
-      // saljemo get(default) request
       const putResponse = await axios.put(`http://localhost:8080/user/${id}`, {
         id: id,
         name: userFormData.name,
@@ -69,7 +67,6 @@ const Profile = () => {
         adress: userFormData.adress,
         password: userFormData.password,
         userWishlist: await userObj.userWishlist
-        //userWishlist treba da stoji ovde kako bi sacuvao stanje liste zelja
       });
       const putData = putResponse.data;
     }catch(error){
@@ -79,7 +76,7 @@ const Profile = () => {
 
   return (
     <>
-      <SectionTitle title="Профиль пользователя" path="Главная страница | Профиль пользователя" />
+      <SectionTitle title="Профиль пользователя"  />
       <form className="max-w-7xl mx-auto text-center px-10" onSubmit={updateProfile}>
         <div className="grid grid-cols-3 max-lg:grid-cols-1">
           <div className="form-control w-full lg:max-w-xs">

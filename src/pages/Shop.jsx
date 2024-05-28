@@ -20,7 +20,6 @@ export const shopLoader = async ({ request }) => {
   let mydate = Date.parse(params.date);
 
   if (mydate && !isNaN(mydate)) {
-    // The date is valid
     mydate = new Date(mydate).toISOString();
   } else {
     mydate = "";
@@ -38,16 +37,15 @@ export const shopLoader = async ({ request }) => {
     current_page: Number(params.page) || 1
   };
 
-  // set params in get apis
-  let parameter = (`?_start=${(filterObj.current_page - 1) * 10}&_limit=10`) + // pre defined that limit of response is 10 & page number count 1
+  let parameter = (`?_start=${(filterObj.current_page - 1) * 10}&_limit=10`) + 
     (filterObj.brand !== 'все' ? `&brandName=${filterObj.brand}` : "") +
     (filterObj.category !== 'все' ? `&category=${filterObj.category}` : "") +
     (filterObj.gender !== 'все' ? `&gender=${filterObj.gender}` : ``) +
     ((filterObj.search != '') ? `&q=${encodeURIComponent(filterObj.search)}` : ``) +
-    (filterObj.order ? `&_sort=price.current.value` : "") + // Check if the order exists, then sort it in ascending order. After that, the API response will be modified if descending order or any other filter is selected.
+    (filterObj.order ? `&_sort=price.current.value` : "") + 
     (filterObj.in_stock ? (`&isInStock`) : '') +
     (filterObj.price !== 'все' ? `&price.current.value_lte=${filterObj.price}` : ``) +
-    (filterObj.date ? `&productionDate=${filterObj.date}` : ``) // It only matched exact for the date and time. 
+    (filterObj.date ? `&productionDate=${filterObj.date}` : ``) 
 
   try {
     const response = await axios(
@@ -56,13 +54,12 @@ export const shopLoader = async ({ request }) => {
     );
     let data = response.data;
 
-    // sorting in descending order
     if (filterObj.order && !(filterObj.order === "по возрастанию" || filterObj.order === "низкая цена")) data.sort((a, b) => b.price.current.value - a.price.current.value)
     return { productsData: data, productsLength: data.length, page: filterObj.current_page };
   } catch (error) {
     console.log(error.response);
   }
-  // /posts?views_gte=10
+
 
   return null;
 };

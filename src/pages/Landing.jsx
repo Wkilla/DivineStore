@@ -21,21 +21,21 @@ const Landing = () => {
     <main>
       <Hero />
       <Stats />
-
       <div className="selected-products">
         <h2 className="text-6xl text-center my-12 max-md:text-4xl text-accent-content">
           Трендовые продукты
         </h2>
-        <div className="selected-products-grid max-w-7xl mx-auto">
+        <div className="selected-products-grid max-w-7xl mx-auto grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {products.map((product) => (
-            <ProductElement
-              key={product.id}
-              id={product.id}
-              title={product.name}
-              image={product.imageUrl}
-              rating={product.rating}
-              price={product.price.current.value}
-            />
+            <div key={product.id} className="product-card bg-gray-800 rounded-lg p-6 shadow-lg">
+              <ProductElement
+                id={product.id}
+                title={product.name}
+                image={product.imageUrl}
+                rating={product.rating}
+                price={product.price.current.value}
+              />
+            </div>
           ))}
         </div>
       </div>

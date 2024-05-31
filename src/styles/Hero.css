@@ -1,14 +1,29 @@
-.hero{
-    height: 700px;
-    background-image: url("../assets/main banner 3.jpg");
+
+.hero {
+    position: relative;
+    background-image: url('../assets/main banner 3.jpg'); /* Замените на путь к вашему изображению */
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-
-}
-
-@media(max-width: 500px){
-    .hero{
-        height: 500px;
-    }
-}
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-content {
+    text-align: center;
+  }
+  
+  .max-w-xl {
+    max-width: 36rem;
+    transform: translateY(-50px); /* Поднимите текст на 50 пикселей */
+  }
+  
+  .text-accent-content {
+    color: #f7fafc;
+  }
+  
+  .mt-6 {
+    margin-top: 1.5rem; /* Добавьте отступ сверху для кнопки */
+  }
+  

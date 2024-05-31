@@ -21,7 +21,7 @@ const Footer = () => {
           О нас
         </Link>
         <Link to="/contact" className="link link-hover text-2xl max-md:text-xl text-accent-content" onClick={() => window.scrollTo(0, 0)}>
-          Контакты
+          Связаться с нами
         </Link>
         {!loginState && (
           <>

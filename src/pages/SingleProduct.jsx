@@ -7,9 +7,7 @@ import {
   SingleProductRating,
   SingleProductReviews,
 } from "../components";
-import { FaHeart } from "react-icons/fa6";
-import { FaCartShopping } from "react-icons/fa6";
-
+import { FaHeart, FaCartShopping } from "react-icons/fa6";
 import { Link, useLoaderData } from "react-router-dom";
 import parse from "html-react-parser";
 import { nanoid } from "nanoid";
@@ -24,9 +22,7 @@ import { store } from "../store";
 
 export const singleProductLoader = async ({ params }) => {
   const { id } = params;
-
   const response = await axios(`http://localhost:8080/products/${id}`);
-
   return { productData: response.data };
 };
 
@@ -58,8 +54,7 @@ const SingleProduct = () => {
     amount: quantity,
     selectedSize: size || productData?.availableSizes[0],
     isInWishList:
-      wishItems.find((item) => item.id === productData?.id + size) !==
-      undefined,
+      wishItems.find((item) => item.id === productData?.id + size) !== undefined,
   };
 
   for (let i = 0; i < productData?.rating; i++) {
@@ -72,18 +67,14 @@ const SingleProduct = () => {
         `http://localhost:8080/user/${localStorage.getItem("id")}`
       );
       const userObj = getResponse.data;
-
-      
       userObj.userWishlist = userObj.userWishlist || [];
-
       userObj.userWishlist.push(product);
 
-      const postResponse = await axios.put(
+      await axios.put(
         `http://localhost:8080/user/${localStorage.getItem("id")}`,
         userObj
       );
 
-      
       store.dispatch(updateWishlist({ userObj }));
       toast.success("Товар добавлен в список желаний!");
     } catch (error) {
@@ -92,32 +83,32 @@ const SingleProduct = () => {
   };
 
   const removeFromWishlistHandler = async (product) => {
-    const getResponse = await axios.get(
-      `http://localhost:8080/user/${localStorage.getItem("id")}`
-    );
-    const userObj = getResponse.data;
+    try {
+      const getResponse = await axios.get(
+        `http://localhost:8080/user/${localStorage.getItem("id")}`
+      );
+      const userObj = getResponse.data;
+      userObj.userWishlist = userObj.userWishlist || [];
+      const newWishlist = userObj.userWishlist.filter(
+        (item) => product.id !== item.id
+      );
+      userObj.userWishlist = newWishlist;
 
-    userObj.userWishlist = userObj.userWishlist || [];
+      await axios.put(
+        `http://localhost:8080/user/${localStorage.getItem("id")}`,
+        userObj
+      );
 
-    const newWishlist = userObj.userWishlist.filter(
-      (item) => product.id !== item.id
-    );
-
-    userObj.userWishlist = newWishlist;
-
-    const postResponse = await axios.put(
-      `http://localhost:8080/user/${localStorage.getItem("id")}`,
-      userObj
-    );
-
-    
-    store.dispatch(removeFromWishlist({ userObj }));
-    toast.success("Товар удален из списка желаний!");
+      store.dispatch(removeFromWishlist({ userObj }));
+     
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
     <>
-      <SectionTitle title="Страница продукта"  />
+      <SectionTitle title="Страница продукта" />
       <div className="grid grid-cols-2 max-w-7xl mx-auto mt-5 max-lg:grid-cols-1 max-lg:mx-5">
         <div className="product-images flex flex-col justify-center max-lg:justify-start">
           <img
@@ -160,7 +151,6 @@ const SingleProduct = () => {
               {" "}
               Количество{" "}
             </label>
-
             <div className="flex items-center gap-1">
               <QuantityInput quantity={quantity} setQuantity={setQuantity} />
             </div>

@@ -34,7 +34,7 @@ const OrderHistory = () => {
 
   return (
     <>
-      <SectionTitle title="Order History" path="Home | Order History" />
+      <SectionTitle title="История Заказов"/>
       <div className="order-history-main max-w-7xl mx-auto mt-10 px-20 max-md:px-10">
         {orders?.length === 0 ? (
           <div className="text-center">
@@ -42,7 +42,7 @@ const OrderHistory = () => {
               В истории заказов нет заказов
             </h1>
             <Link
-              to="/shop"
+              to="/shop?search=&category=все&brand=все&order=по+возрастанию&gender=все&price=200000&date="
               className="btn bg-blue-600 hover:bg-blue-500 text-white mt-10"
             >
               Сделайте свой первый заказ

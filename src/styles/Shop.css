@@ -1,3 +1,21 @@
-.shop-products-grid div div{
-    margin: 0 auto;
-}
+.shop-products-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  .product-card {
+    background-color: #2d3748; /* bg-gray-800 */
+    border-radius: 0.5rem; /* rounded-lg */
+    padding: 1rem; /* p-4 */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .text-accent-content {
+    color: #f7fafc;
+  }
+  

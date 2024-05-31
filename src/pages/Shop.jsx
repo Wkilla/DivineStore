@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import {
   Filters,
@@ -15,7 +14,6 @@ export const shopLoader = async ({ request }) => {
   const params = Object.fromEntries([
     ...new URL(request.url).searchParams.entries(),
   ]);
-
 
   let mydate = Date.parse(params.date);
 
@@ -50,7 +48,6 @@ export const shopLoader = async ({ request }) => {
   try {
     const response = await axios(
       `http://localhost:8080/products${parameter}`
-
     );
     let data = response.data;
 
@@ -60,40 +57,38 @@ export const shopLoader = async ({ request }) => {
     console.log(error.response);
   }
 
-
   return null;
 };
 
-
-
-
 const Shop = () => {
-
   const productLoaderData = useLoaderData();
-
 
   return (
     <>
-      <SectionTitle title="Магазин"  />
+      <SectionTitle title="Магазин" />
       <div className="max-w-7xl mx-auto mt-5">
         <Filters />
-        {productLoaderData.productsData.length === 0 && <h2 className="text-accent-content text-center text-4xl my-10">По этому фильтру не найдено ни одного товара</h2>}
-        <div className="grid grid-cols-4 px-2 gap-y-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 shop-products-grid">
+        {productLoaderData.productsData.length === 0 && (
+          <h2 className="text-accent-content text-center text-4xl my-10">
+            По этому фильтру не найдено ни одного товара
+          </h2>
+        )}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 shop-products-grid">
           {productLoaderData.productsData.length !== 0 &&
             productLoaderData.productsData.map((product) => (
-              <ProductElement
-                key={nanoid()}
-                id={product.id}
-                title={product.name}
-                image={product.imageUrl}
-                rating={product.rating}
-                price={product.price.current.value}
-                brandName={product.brandName}
-              />
+              <div key={nanoid()} className="product-card bg-gray-800 rounded-lg p-4 shadow-lg">
+                <ProductElement
+                  id={product.id}
+                  title={product.name}
+                  image={product.imageUrl}
+                  rating={product.rating}
+                  price={product.price.current.value}
+                  brandName={product.brandName}
+                />
+              </div>
             ))}
         </div>
       </div>
-
       <Pagination />
     </>
   );

@@ -8452,7 +8452,19 @@
       "phone": "87773978236",
       "adress": "Gudib 5",
       "password": "Ivanko2006",
-      "userWishlist": []
+      "userWishlist": [
+        {
+          "id": 205107270,
+          "title": "Мокасины Walk London Sean с кисточками из коричневой фрезерованной кожи",
+          "image": "images.asos-media.com/products/walk-london-sean-tassel-loafers-in-brown-milled-leather/205107270-1-brown",
+          "rating": 5,
+          "price": 38800,
+          "brandName": "WALK LONDON",
+          "amount": 1,
+          "selectedSize": 37,
+          "isInWishList": false
+        }
+      ]
     }
   ],
   "orders": [
@@ -8678,6 +8690,25 @@
         }
       ],
       "id": 10
+    },
+    {
+      "userId": "EsdLXZFyJbhVawYYlIhpS",
+      "orderStatus": "в процессе",
+      "subtotal": 8000,
+      "cartItems": [
+        {
+          "id": 205691084,
+          "title": "Пояс Bershka fire detail черного цвета",
+          "image": "images.asos-media.com/products/bershka-fire-detail-belt-in-black/205691084-1-black",
+          "rating": 5,
+          "price": 8000,
+          "brandName": "Bershka",
+          "amount": 1,
+          "selectedSize": "XS",
+          "isInWishList": false
+        }
+      ],
+      "id": 11
     }
   ]
 }

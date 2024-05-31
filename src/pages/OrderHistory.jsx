@@ -34,7 +34,7 @@ const OrderHistory = () => {
 
   return (
     <>
-      <SectionTitle title="История Заказов"/>
+      <SectionTitle title="История заказов"/>
       <div className="order-history-main max-w-7xl mx-auto mt-10 px-20 max-md:px-10">
         {orders?.length === 0 ? (
           <div className="text-center">
@@ -80,34 +80,34 @@ const OrderHistory = () => {
                             <td>{product.title}</td>
                             <td>{product.selectedSize}</td>
                             <td>{product.amount}</td>
-                            <td>${(product.price * product.amount).toFixed(2)}</td>
+                            <td>{(product.price * product.amount).toFixed(2)} ₸</td>
                           </tr>
                         ))}
                         <tr>
                           <td colSpan="5" className="text-center">
                             <h4 className="text-md text-accent-content">
-                            Промежуточный итог: ${ Math.round(order?.subtotal) }
+                            Промежуточный итог: { Math.round(order?.subtotal) } ₸
                             </h4>
                           </td>
                         </tr>
                         <tr>
                           <td colSpan="5" className="text-center">
                             <h3 className="text-md text-accent-content">
-                              Доставка: 5000тг
+                              Доставка: 5000 ₸
                             </h3>
                           </td>
                         </tr>
                         <tr>
                           <td colSpan="5" className="text-center">
                             <h3 className="text-md text-accent-content">
-                              Налог: 20%: тг{ Math.round(order?.subtotal / 5) }
+                              Налог 20%: { Math.round(order?.subtotal / 5) } ₸
                             </h3>
                           </td>
                         </tr>
                         <tr>
                           <td colSpan="5" className="text-center">
                             <h3 className="text-xl text-accent-content">
-                              - Общее количество заказов: тг{ Math.round(order?.subtotal + 50 + (order?.subtotal / 5)) } -
+                              Общая сумма заказа: { Math.round(order?.subtotal + 50 + (order?.subtotal / 5)) } ₸
                             </h3>
                           </td>
                         </tr>

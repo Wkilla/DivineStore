@@ -16,7 +16,7 @@ const ThankYou = () => {
 
   const saveToOrderHistory = async () => {
     try {
-      const response = await axios.post("http://localhost:8080/orders", {
+      await axios.post("http://localhost:8080/orders", {
         userId: localStorage.getItem("id"),
         orderStatus: "в процессе",
         subtotal: total,
@@ -39,40 +39,35 @@ const ThankYou = () => {
       toast.error("Вы должны войти в систему, чтобы получить доступ к этой странице");
       navigate("/");
     }
-  }, []);
-
+  }, [loginState, navigate]);
 
   return (
     <>
-      <SectionTitle title="Спасибо"  />
-      <div className="thankyou-content text-center text-accent-content px-10 max-w-7xl mx-auto">
-        <h2 className="text-6xl max-sm:text-4xl">
+      <SectionTitle title="Спасибо" />
+      <div className="thankyou-content text-center bg-gray-800 text-white p-10 rounded-lg shadow-md max-w-7xl mx-auto">
+        <h2 className="text-4xl font-bold text-purple-500">
           Благодарим вас за вашу покупку!
         </h2>
-
-        <h3 className="text-2xl mt-10 max-sm:text-xl">
-          Мы надеемся, что вам понравится ваша новая одежда и обувь! Мы ценим ваш
-          бизнес и с нетерпением ждем встречи с вами в ближайшее время.
-        </h3>
-        <h3 className="text-2xl mt-5 max-sm:text-xl">
+        <p className="text-lg mt-5">
+          Мы надеемся, что вам понравится ваша новая одежда и обувь! Мы ценим ваш бизнес и с нетерпением ждем встречи с вами в ближайшее время.
+        </p>
+        <p className="text-lg mt-5">
           Вот несколько вещей, которые вы можете сделать дальше:
-        </h3>
-        <ul className="text-xl mt-5 text-blue-500 max-sm:text-lg">
-          <li className="hover:text-blue-600 cursor-pointer">
+        </p>
+        <ul className="text-lg mt-5 text-blue-400">
+          <li className="hover:text-blue-300 cursor-pointer">
             <Link to="/order-history">&rarr; Смотрите историю заказов &larr;</Link>
           </li>
-          <li className="hover:text-blue-600 cursor-pointer">
+          <li className="hover:text-blue-300 cursor-pointer">
             <Link to="/">&rarr; Просматривайте больше товаров и покупайте больше &larr;</Link>
           </li>
-
         </ul>
-
-        <h4 className="text-xl mt-5 max-sm:text-lg">
+        <p className="text-lg mt-5">
           Еще раз благодарим вас за покупку!
-        </h4>
-        <h4 className="text-xl max-sm:text-lg">
-        С уважением, магазин Divine Clothes
-        </h4>
+        </p>
+        <p className="text-lg">
+          С уважением, магазин Divine Clothes
+        </p>
       </div>
     </>
   );

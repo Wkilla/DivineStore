@@ -28,7 +28,7 @@ const WishItem = ({ item, counter }) => {
       );
   
       store.dispatch(removeFromWishlist({ userObj }));
-      toast.success("Товар удален из списка желаний!");
+      
   
     }
   return (
